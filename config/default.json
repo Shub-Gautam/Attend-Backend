@@ -1,0 +1,19 @@
+{
+  "PORT": 9072,
+  "BASE_URL": "http://localhost:9072/api/v1/",
+  "MONGODB_URL": "mongodb+srv://atul:pTFjMvri9lnKeVXL@testcluster.qau9t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "MONGO_AUTH": {
+    "USER": "atul",
+    "PASSWORD": "pTFjMvri9lnKeVXL",
+    "AUTHSOURCE": ""
+  },
+  "JWT_OPTIONS": {
+    "SECRET_KEY": "4bxXisWNQHZtdAyHfehUCj5a0Chy2Xxr4LGIEE6nl3M=",
+    "EXPIRES_IN": "5d",
+    "REFRESH_SECRET_KEY": "box53zdNHFS+vjvViLT4ER1T79UD+bqAcjyM/2hG/OI=",
+    "REFRESH_EXPIRES_IN": "5d"
+  },
+  "request": {
+    "maxParameters": 20
+  }
+}

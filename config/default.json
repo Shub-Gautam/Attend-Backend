@@ -1,10 +1,10 @@
 {
-  "PORT": 9072,
+  // "PORT": 9072,
   "BASE_URL": "http://localhost:9072/api/v1/",
-  "MONGODB_URL": "mongodb+srv://atul:pTFjMvri9lnKeVXL@testcluster.qau9t.mongodb.net/myFirstDatabase?retryWrites=true&w=majority",
+  "MONGODB_URL": "mongodb+srv://shubh:shubh@cluster0.awfcswy.mongodb.net/?retryWrites=true&w=majority",
   "MONGO_AUTH": {
-    "USER": "atul",
-    "PASSWORD": "pTFjMvri9lnKeVXL",
+    "USER": "shubh",
+    "PASSWORD": "shubh",
     "AUTHSOURCE": ""
   },
   "JWT_OPTIONS": {
@@ -15,5 +15,10 @@
   },
   "request": {
     "maxParameters": 20
+  },
+  "cloudinary": {
+    "CLOUD_NAME": "db0gn6pqi",
+    "CLOUDINARY_API_KEY": "925269621752173",
+    "CLOUDINARY_API_SECRET": "HI6nonLqiBX8TXXAu4pxMd9BKvE"
   }
 }

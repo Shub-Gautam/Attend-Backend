@@ -4,11 +4,13 @@ const http = require("http");
 const https = require("https");
 const config = require("config");
 const express = require("express");
+const morgan = require("morgan");
 const mongoose = require("mongoose");
+const cloudinary = require("cloudinary");
 
 // const messages = require("./constant/messages");
 
-const PORT = config.get("PORT");
+const PORT =  process.env.PORT || config.get("PORT") ;
 const MONGO_URI = config.get("MONGODB_URL");
 
 let server;
@@ -18,6 +20,7 @@ const route = require("./route");
 const universal = require("./utils");
 
 console.log("NODE_ENV", process.env.NODE_ENV);
+
 server = http.createServer(app);
 
 //Middlewares
@@ -73,16 +76,27 @@ server.listen(PORT, () => {
 // Mongoose Connection
 mongoose
   .connect(MONGO_URI, {
-    user: config.get("MONGO_AUTH.USER"),
-    pass: config.get("MONGO_AUTH.PASSWORD"),
+    // user: config.get("MONGO_AUTH.USER"),
+    // pass: config.get("MONGO_AUTH.PASSWORD"),
     useUnifiedTopology: true,
     useNewUrlParser: true,
-    useCreateIndex: true,
-    useFindAndModify: false,
+    // useCreateIndex: true,
+    // useFindAndModify: false,
   })
   .then((result) => {
     console.log("===== Connected to MongoDB =====");
   })
   .catch((err) => {
-    throw new Error("MongoDB Connection Error!", err);
+    console.log(err);
+    // throw new Error("MongoDB Connection Error!", err);
   });
+
+const CLOUD_NAME = config.get("cloudinary.CLOUD_NAME");
+const CLOUDINARY_API_KEY = config.get("cloudinary.CLOUDINARY_API_KEY");
+const CLOUDINARY_API_SECRET = config.get("cloudinary.CLOUDINARY_API_SECRET");
+
+cloudinary.config({
+  cloud_name: CLOUD_NAME,
+  api_key: CLOUDINARY_API_KEY,
+  api_secret: CLOUDINARY_API_SECRET,
+});

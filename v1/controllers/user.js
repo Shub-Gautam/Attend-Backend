@@ -53,6 +53,7 @@ exports.registerUser = async (req, res, next) => {
 
 exports.loginUser = async (req, res, next) => {
   try {
+    console.log(req.body);
     req.user = await Models.user.findOne({ "email.id": req.body.email });
     if (!req.user) {
       return universal.errorResponse(res, statusCodes.BAD, {

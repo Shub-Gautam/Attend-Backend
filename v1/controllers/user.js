@@ -28,7 +28,7 @@ exports.registerUser = async (req, res, next) => {
         console.log(err);
         universal.errorResponse(res, statusCodes.BAD, err);
       } else {
-        console.log(result);
+        console.log(result + "File Saved ===== QR");
       }
     });
 
@@ -40,6 +40,8 @@ exports.registerUser = async (req, res, next) => {
     );
 
     const token = await universal.jwtSign(createdUser);
+
+    console.log(token);
 
     universal.successResponse(res, statusCodes.OK, messages.USER_CREATED, {
       userID: createdUser._id,

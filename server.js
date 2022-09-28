@@ -10,7 +10,7 @@ const cloudinary = require("cloudinary");
 
 // const messages = require("./constant/messages");
 
-const PORT =  process.env.PORT || config.get("PORT") ;
+const PORT = process.env.PORT || 9072;
 const MONGO_URI = config.get("MONGODB_URL");
 
 let server;

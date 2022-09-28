@@ -80,5 +80,28 @@ exports.loginUser = async (req, res, next) => {
     universal.successResponse(res, statusCodes.OK, messages.SUCCESSFULL, {
       token: token,
     });
-  } catch {}
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.getUser = async (req, res, next) => {
+  try {
+    console.log(req.body);
+    console.log(req.user);
+
+    if (!req.user)
+      return universal.successResponse(
+        res,
+        statusCodes.USER_NOT_FOUND,
+        messages.FAILED,
+        {}
+      );
+
+    universal.successResponse(res, statusCodes.OK, messages.SUCCESSFULL, {
+      user: req.user,
+    });
+  } catch (err) {
+    next(err);
+  }
 };

@@ -15,11 +15,11 @@ exports.registerUser = async (req, res, next) => {
       name: req.body.name,
       password: req.body.password,
       "email.id": req.body.email,
-      "phone.number": req.body.phone,
+      "phone.number": Number(req.body.phone),
       username: req.body.username,
       gender: req.body.gender,
-      city: req.body.city,
-      role: req.body.role,
+      city: "Rohini",
+      role: "s",
       dateOfBirth: new Date(req.body.dob),
     });
 

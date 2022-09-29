@@ -19,7 +19,7 @@ exports.registerUser = async (req, res, next) => {
       username: req.body.username,
       gender: req.body.gender,
       city: "Rohini",
-      role: "s",
+      role: "a",
       dateOfBirth: new Date(req.body.dob),
     });
 

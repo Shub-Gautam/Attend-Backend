@@ -71,3 +71,43 @@ exports.createEvent = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.fetchUserEvents = async (req, res, next) => {
+  try {
+    console.log(req.body);
+
+    if (req.user.role !== "a")
+      return universal.successResponse(
+        res,
+        statusCodes.OK,
+        messages.NOT_AUTHORIZED,
+        {}
+      );
+
+    const fetchedEvent = await Models.event.find({
+      Organizer: req.user._id,
+    });
+
+    universal.successResponse(res, statusCodes.OK, messages.EVENT_CREATED, {
+      EventData: fetchedEvent,
+    });
+  } catch (err) {
+    next(err);
+  }
+};
+
+exports.fetchEvent = async (req, res, next) => {
+  try {
+    console.log(req.body);
+
+    const fetchedEvent = await Models.event.findOne({
+      _id: req.body.eventId,
+    });
+
+    universal.successResponse(res, statusCodes.OK, messages.EVENT_CREATED, {
+      EventData: fetchedEvent,
+    });
+  } catch (err) {
+    next(err);
+  }
+};

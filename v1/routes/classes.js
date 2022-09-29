@@ -10,4 +10,12 @@ router.post(
 
 router.post("/add/event", authentication.isCustomerValid, classes.createEvent);
 
+router.post(
+  "/fetch/events",
+  authentication.isCustomerValid,
+  classes.fetchUserEvents
+);
+
+router.post("/fetch/event", authentication.isCustomerValid, classes.fetchEvent);
+
 module.exports = router;

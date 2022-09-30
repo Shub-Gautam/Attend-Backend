@@ -12,7 +12,6 @@ const EventSchema = new Schema(
     Venue: {
       type: String,
       required: true,
-      unique: true,
       trim: true,
     },
     Description: {

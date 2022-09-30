@@ -111,3 +111,21 @@ exports.fetchEvent = async (req, res, next) => {
     next(err);
   }
 };
+
+exports.fetchAttendance = async (req, res, next) => {
+  try {
+    console.log(req.body);
+
+    const attendance = await Models.attendance
+      .find({
+        eventId: req.body.eventId,
+      })
+      .distinct("studentId");
+
+    universal.successResponse(res, statusCodes.OK, messages.SUCCESSFULL, {
+      Attendence: attendance,
+    });
+  } catch (err) {
+    next(err);
+  }
+};

@@ -6,4 +6,5 @@ module.exports = {
   NOT_AUTHORIZED: "Permission only for admins",
   EVENT_CREATED: "Event Created",
   ATTENDANCE_MARKED: "Attandence marked",
+  DONATION_SUCCESSFULL: "Donation Successfull",
 };

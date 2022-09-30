@@ -7,4 +7,5 @@ module.exports = {
   EVENT_CREATED: "Event Created",
   ATTENDANCE_MARKED: "Attandence marked",
   DONATION_SUCCESSFULL: "Donation Successfull",
+  EVENT_FETCHED: "Event Fetched",
 };

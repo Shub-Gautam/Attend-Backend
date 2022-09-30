@@ -24,4 +24,10 @@ router.post(
   classes.fetchAttendance
 );
 
+router.post(
+  "/download/attendance",
+  authentication.isCustomerValid,
+  classes.downloadAttendance
+);
+
 module.exports = router;

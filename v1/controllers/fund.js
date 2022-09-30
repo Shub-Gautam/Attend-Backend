@@ -35,6 +35,7 @@ exports.donate = async (req, res, next) => {
       Amount: amount,
       Note: note,
       donor: req.user._id,
+      transactionId: req.user.transactionId,
     });
 
     await Models.universal.successResponse(

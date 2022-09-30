@@ -15,7 +15,12 @@ const FundSchema = new Schema(
       ref: "user",
     },
     Amount: {
-      type: Number,
+      type: String,
+      required: true,
+      trim: true,
+    },
+    transactionId: {
+      type: String,
       required: true,
       trim: true,
     },

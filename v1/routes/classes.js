@@ -18,4 +18,10 @@ router.post(
 
 router.post("/fetch/event", authentication.isCustomerValid, classes.fetchEvent);
 
+router.post(
+  "/fetch/attendance",
+  authentication.isCustomerValid,
+  classes.fetchAttendance
+);
+
 module.exports = router;

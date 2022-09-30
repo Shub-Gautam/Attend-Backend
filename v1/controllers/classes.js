@@ -122,8 +122,10 @@ exports.fetchAttendance = async (req, res, next) => {
       })
       .distinct("studentId");
 
+    const attendedUser = await Models.user.find({ _id: { $in: attendance } });
+
     universal.successResponse(res, statusCodes.OK, messages.SUCCESSFULL, {
-      Attendence: attendance,
+      Attendence: attendedUser,
     });
   } catch (err) {
     next(err);

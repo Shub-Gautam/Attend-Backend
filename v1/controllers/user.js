@@ -18,8 +18,8 @@ exports.registerUser = async (req, res, next) => {
       "phone.number": Number(req.body.phone),
       username: req.body.username,
       gender: req.body.gender,
-      city: "Rohini",
-      role: "a",
+      city: "Delhi",
+      role: "s",
       dateOfBirth: new Date(req.body.dob),
     });
 
